@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Doctor Appointment Booking</h1>
+            <p>Schedule your appointment with our healthcare professionals</p>
+        </header>
+
+        <div id="successMessage" class="success-message hidden">
+            ✓ Appointment booked successfully!
+        </div>
+
+        <div class="form-container">
+            <h2>Book an Appointment</h2>
+            <form id="appointmentForm">
+                <div class="form-group">
+                    <label for="patientName">Full Name *</label>
+                    <input 
+                        type="text" 
+                        id="patientName" 
+                        name="patientName" 
+                        placeholder="Enter your full name"
+                        required
+                    >
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="your.email@example.com"
+                        required
+                    >
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="(123) 456-7890"
+                        required
+                    >
+                    <span class="error-message" id="phoneError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctor">Select Doctor *</label>
+                    <select id="doctor" name="doctor" required>
+                        <option value="">-- Choose a Doctor --</option>
+                        <option value="Dr. Sarah Johnson - General Physician">Dr. Sarah Johnson - General Physician</option>
+                        <option value="Dr. Michael Chen - Cardiologist">Dr. Michael Chen - Cardiologist</option>
+                        <option value="Dr. Emily Rodriguez - Pediatrician">Dr. Emily Rodriguez - Pediatrician</option>
+                        <option value="Dr. James Wilson - Orthopedic">Dr. James Wilson - Orthopedic</option>
+                        <option value="Dr. Lisa Anderson - Dermatologist">Dr. Lisa Anderson - Dermatologist</option>
+                        <option value="Dr. Robert Taylor - Neurologist">Dr. Robert Taylor - Neurologist</option>
+                    </select>
+                    <span class="error-message" id="doctorError"></span>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date *</label>
+                        <input 
+                            type="date" 
+                            id="appointmentDate" 
+                            name="appointmentDate" 
+                            required
+                        >
+                        <span class="error-message" id="dateError"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime">Appointment Time *</label>
+                        <select id="appointmentTime" name="appointmentTime" required>
+                            <option value="">-- Select Time --</option>
+                            <option value="09:00 AM">09:00 AM</option>
+                            <option value="09:30 AM">09:30 AM</option>
+                            <option value="10:00 AM">10:00 AM</option>
+                            <option value="10:30 AM">10:30 AM</option>
+                            <option value="11:00 AM">11:00 AM</option>
+                            <option value="11:30 AM">11:30 AM</option>
+                            <option value="02:00 PM">02:00 PM</option>
+                            <option value="02:30 PM">02:30 PM</option>
+                            <option value="03:00 PM">03:00 PM</option>
+                            <option value="03:30 PM">03:30 PM</option>
+                            <option value="04:00 PM">04:00 PM</option>
+                            <option value="04:30 PM">04:30 PM</option>
+                        </select>
+                        <span class="error-message" id="timeError"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for Visit *</label>
+                    <textarea 
+                        id="reason" 
+                        name="reason" 
+                        rows="4" 
+                        placeholder="Please describe your symptoms or reason for visit"
+                        required
+                    ></textarea>
+                    <span class="error-message" id="reasonError"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Book Appointment</button>
+            </form>
+        </div>
+
+        <div class="appointments-container">
+            <h2>Your Appointments</h2>
+            <div id="appointmentsList">
+                <p class="no-appointments">No appointments booked yet.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
